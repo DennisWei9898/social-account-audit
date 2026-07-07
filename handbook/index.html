@@ -106,7 +106,7 @@
   <div style="display:flex;flex-direction:column;gap:14px;margin-top:20px">
     <div class="card" style="display:flex;gap:18px;align-items:flex-start"><div style="font-size:30px">🤖</div><div><div style="font-weight:800;font-size:15px">一個 Claude 帳號</div><p style="font-size:13px;color:var(--ink-soft);margin-top:4px;line-height:1.65">到 <code class="inline">claude.ai</code> 免費註冊就能用。這就是你的「AI 指揮部」，等一下所有 Prompt 都貼到這裡跟它對話。</p></div></div>
     <div class="card" style="display:flex;gap:18px;align-items:flex-start"><div style="font-size:30px">📂</div><div><div style="font-weight:800;font-size:15px">打開健檢流程的 GitHub 專案</div><p style="font-size:13px;color:var(--ink-soft);margin-top:4px;line-height:1.65">網址：<code class="inline">github.com/DennisWei9898/social-account-audit</code>。<b>兩種用法挑一種</b>：<br>① <b>Claude Code 用戶</b>：安裝裡面的 <code class="inline">skill/</code>，之後說一句「健檢我的帳號」就自動啟動整套。<br>② <b>一般 claude.ai 用戶</b>：不用安裝，照裡面的 Prompt 一步步貼——就是接下來這幾頁。</p></div></div>
-    <div class="card tint" style="display:flex;gap:18px;align-items:flex-start;border-width:1.5px"><div style="font-size:30px">🛡️</div><div style="flex:1"><div style="font-weight:800;font-size:15px;color:var(--orange-deep)">安全鐵則：自己手動匯出數據 <span class="tag" style="background:var(--orange);margin-left:8px">最重要</span></div><p style="font-size:13px;color:var(--ink-soft);margin-top:6px;line-height:1.7"><b>絕對不要</b>叫 AI 用瀏覽器「自動登入你的 IG 幫你抓資料」。已經有人這樣做被平台判定機器人、帳號被停用。<br>正確做法有兩種：① 你自己打開內建的 <b>成效分析（Insights）</b>匯出或<b>截圖</b>；② <b>貼連結讓它去公開頁唯讀爬</b>——Threads 貼帳號連結就全爬，IG／FB 貼「單篇貼文連結」爬讚/留言（都只讀公開頁、不碰你的登入）。</p></div></div>
+    <div class="card tint" style="display:flex;gap:18px;align-items:flex-start;border-width:1.5px"><div style="font-size:30px">🛡️</div><div style="flex:1"><div style="font-weight:800;font-size:15px;color:var(--orange-deep)">安全鐵則：AI 不「自動登入」你的帳號 <span class="tag" style="background:var(--orange);margin-left:8px">最重要</span></div><p style="font-size:13px;color:var(--ink-soft);margin-top:6px;line-height:1.7">真正危險的是「叫 AI <b>自動登入</b>你的帳號 ＋ <b>暴力翻大量貼文</b>」——有人這樣被判機器人、帳號停用。<br>安全做法（下一頁詳說）：<b>你自己先登入</b>打開帳號，Claude 只<b>讀你開的畫面</b>（人工節奏、不狂翻）；或看公開頁<b>貼連結免登入爬</b>；或<b>手動匯出</b>。三種都行，共同底線就是<b>你自己登入、AI 不代登</b>。</p></div></div>
   </div>
   <div class="pg-foot"><span>帳號健檢新手手冊</span><span><b>03</b> · 事前準備</span></div>
 </section>
@@ -149,30 +149,29 @@
     <div class="stepnum serif">2</div>
     <div><div class="kicker">步驟二</div><h2 class="title" style="font-size:27px;margin-top:2px">給它你的帳號現況</h2></div>
   </div>
-  <p class="lead" style="margin-top:14px">讓 AI 看懂你「現在長什麼樣」——兩條路：貼連結讓它唯讀爬公開頁，或自己手動匯出。<b>都不讓 AI 登入你的帳號。</b></p>
-  <div style="display:flex;gap:20px;margin-top:18px;align-items:center">
+  <p class="lead" style="margin-top:14px">讓 AI 看懂你「現在長什麼樣」。<b>查你自己的帳號，最完整的方式是：你自己登入打開它，讓 Claude 用 Chrome 套件讀畫面</b>——連只有你看得到的 Insights（觸及／儲存）都拿得到。</p>
+  <div style="display:flex;gap:20px;margin-top:16px;align-items:flex-start">
     <div style="flex:1">
-      <ul class="clean">
-        <li><b>貼連結</b>：Threads 貼帳號連結就全爬；IG／FB 貼「單篇貼文連結」爬讚/留言（帳號層粉絲數改手動）</li>
-        <li><b>或手動</b>：打開 IG／Threads 的<b>成效分析（Insights）</b>，或截圖近 12–15 則貼文</li>
-        <li>記下：你的 <b>bio</b>、粉絲數、<b>表現最好與最差</b>的貼文各 1–3 則</li>
-        <li>整理成一小段文字（貼文主題＋讚／留言數就好）</li>
-        <li>🛡️ 再說一次：<b>不要</b>叫 AI 自動登入抓，有封號風險</li>
+      <ul class="clean" style="gap:8px">
+        <li><b>① 你自己的帳號（最完整）</b>：在瀏覽器<b>自己登入</b>打開 IG／FB／Threads → 請 Claude 用 Chrome 套件讀 → 每篇讚／留言＋粉絲數＋<b>Insights（觸及／儲存）</b>全都有。<b>你自己點頁面、它讀</b>，看近 12–15 則＋最好最差的就夠，別叫它狂捲翻上百則。</li>
+        <li><b>② 看 role model／不想開套件</b>：貼連結免登入爬（Threads 貼帳號全爬；IG／FB 貼單篇貼文連結），或手動匯出／截圖。別人的帳號本來就看不到 Insights，這樣就夠。</li>
       </ul>
+      <div class="card tint" style="margin-top:14px;padding:12px 15px;font-size:12px;color:var(--ink-soft);line-height:1.6"><b>🛡️ 唯一鐵則：</b>AI <b>不自動登入</b>（你自己先登入好）、只讀不改不發文、人工節奏不暴力翻取——避開封號案例的兩個死因（自動登入＋暴力翻大量）。</div>
     </div>
-    <div style="width:62mm;flex:0 0 auto">
+    <div style="width:58mm;flex:0 0 auto">
       <div class="win">
-        <div class="win-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="ttl">Instagram · 成效分析</span></div>
-        <div style="background:#fff;padding:14px">
-          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-soft);border-bottom:1px solid var(--line);padding-bottom:8px"><span>近 30 天觸及</span><b style="color:var(--orange-deep)">12,480</b></div>
-          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-soft);padding:8px 0"><span>互動最高貼文</span><b>「AI 工具懶人包」</b></div>
-          <div style="background:var(--orange-soft);border-radius:8px;padding:8px;font-size:10.5px;color:var(--orange-deep);margin-top:4px;text-align:center">↓ 匯出／截圖，貼給 Claude</div>
+        <div class="win-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="ttl">Chrome · 你已登入的 IG</span></div>
+        <div style="background:#fff;padding:13px">
+          <div style="font-size:10.5px;color:var(--muted);margin-bottom:8px">Claude 讀你打開的畫面 →</div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-soft);border-bottom:1px solid var(--line);padding-bottom:7px"><span>粉絲數</span><b style="color:var(--orange-deep)">1,240</b></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-soft);padding:7px 0 5px"><span>「AI 懶人包」這篇</span><b>❤ 312 · 💬 48</b></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-soft);padding-bottom:6px"><span>觸及 / 儲存</span><b style="color:var(--orange-deep)">12,480 / 356</b></div>
+          <div style="background:var(--orange-soft);border-radius:8px;padding:7px;font-size:10px;color:var(--orange-deep);text-align:center">只有登入本人才看得到 ↑</div>
         </div>
       </div>
-      <div style="text-align:center;font-size:10.5px;color:var(--muted);margin-top:6px">後台數據示意（模擬長相）</div>
+      <div style="text-align:center;font-size:10.5px;color:var(--muted);margin-top:6px">Chrome 套件讀畫面示意（模擬長相）</div>
     </div>
   </div>
-  <div style="margin-top:14px;font-size:11px;color:var(--muted);line-height:1.6;border-top:1px dashed var(--line);padding-top:10px">進階（選用）：想連 IG／FB 的粉絲數、觸及、儲存都自動查？repo 裡有 <code class="inline" style="font-size:10.5px">chrome-assisted</code> 路徑，用瀏覽器唯讀查你<b>自己已登入</b>的後台——你自己先登入、AI 不代登、風險自負。新手先用上面兩條就夠。</div>
   <div class="pg-foot"><span>帳號健檢新手手冊</span><span><b>05</b> · 步驟二</span></div>
 </section>
 
