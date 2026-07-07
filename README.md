@@ -49,6 +49,16 @@ MIT License · by [@now6pm](https://www.instagram.com/now6pm/)
 ## 📖 完全新手看這份：圖文手冊
 不知道怎麼開始？先看 **[`handbook/帳號健檢新手手冊.pdf`](./handbook/)**——10 頁 A4 圖文，一步一步帶你從零跑到生出 30 天圖卡，完全不用寫 code。
 
+## 兩種用法（挑一種）
+
+- **A · Claude Code 用戶（推薦）**：安裝 [`skill/`](./skill/) 這個 skill，直接說一句「**健檢我的帳號**」就啟動整套 loop——它會當指揮官派 AI 研究、產出、再換一個 AI 驗收。安裝：
+  ```
+  cp -r skill ~/.claude/skills/social-account-audit
+  ```
+- **B · 一般 claude.ai 用戶**：不用安裝，照 [`prompts/`](./prompts/) 的 Prompt 一步步貼給對話。
+
+> 兩種底層是同一套 **loop engineering**：指揮官只規劃/審查/拍板、粗活派給便宜快的 AI、**產出與驗收用不同 context 的 AI 分離**。skill 版把它自動化，prompt 版讓你手動跑。
+
 ## 快速開始（跟 Claude 一起跑）
 
 1. **填訪談表**：打開 [`INTERVIEW.md`](./INTERVIEW.md)，回答關於你目標與現況的問題。
@@ -62,6 +72,7 @@ MIT License · by [@now6pm](https://www.instagram.com/now6pm/)
 
 ## 目錄
 
+- [`skill/`](./skill/) — **可安裝的 Claude Code skill**（loop-engineering 版，一句話啟動整套健檢）
 - [`INTERVIEW.md`](./INTERVIEW.md) — ① 訪談：鎖定你的目標與現況
 - [`PROCESS.md`](./PROCESS.md) — 完整方法論（6 步逐步拆解 + 品味/紅線）
 - [`prompts/`](./prompts/) — 每一步可直接複製的 Claude Prompt
