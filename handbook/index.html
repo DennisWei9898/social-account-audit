@@ -1,0 +1,295 @@
+<meta charset="utf-8">
+<title>帳號健檢新手手冊 · social-account-audit</title>
+<style>
+  :root{
+    --bg:#FAF9F5; --bg-warm:#F3ECE0; --card:#FFFDF8;
+    --orange:#D97757; --orange-deep:#BE5C39; --orange-soft:#F8E6DA; --orange-tint:#FBEFE7;
+    --ink:#26241F; --ink-soft:#4C483F; --muted:#8B857A;
+    --line:#E7DECF; --line-strong:#DBCFB9; --green:#5E8B6A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{background:#d9d3c7;font-family:"PingFang TC","Heiti TC","Microsoft JhengHei",sans-serif;color:var(--ink);line-height:1.62;font-size:14px}
+  .serif{font-family:"Georgia","Times New Roman","Songti TC",serif}
+  .page{width:210mm;height:297mm;background:var(--bg);margin:0 auto;position:relative;overflow:hidden;padding:19mm 18mm 16mm;display:flex;flex-direction:column}
+  @media screen{ .page{margin:14px auto;box-shadow:0 8px 34px rgba(0,0,0,.18)} }
+  @media print{ @page{size:A4;margin:0} body{background:#fff} .page{margin:0;box-shadow:none;page-break-after:always} .page:last-child{page-break-after:auto} }
+  .kicker{font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--orange-deep);font-weight:700}
+  .pg-foot{position:absolute;left:18mm;right:18mm;bottom:9mm;display:flex;justify-content:space-between;align-items:center;font-size:10.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:7px;letter-spacing:.02em}
+  .pg-foot b{color:var(--orange-deep);font-weight:700}
+  h2.title{font-size:30px;line-height:1.18;font-weight:800;letter-spacing:-.01em;color:var(--ink)}
+  h2.title .em{color:var(--orange-deep)}
+  p.lead{font-size:15px;color:var(--ink-soft);line-height:1.75}
+  .chip{display:inline-flex;align-items:center;gap:6px;background:var(--orange-soft);color:var(--orange-deep);font-size:11.5px;font-weight:700;padding:4px 11px;border-radius:999px;letter-spacing:.02em}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+  .card.warm{background:var(--bg-warm);border-color:var(--line-strong)}
+  .card.tint{background:var(--orange-tint);border-color:#F0D8C8}
+  .tag{display:inline-block;background:var(--ink);color:#F6EFE1;font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:6px;letter-spacing:.05em}
+  code.inline{font-family:"SF Mono","Menlo",monospace;font-size:12px;background:#efe7d7;color:var(--orange-deep);padding:1.5px 7px;border-radius:6px;border:1px solid #e4d8c2}
+  .win{border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,.12);box-shadow:0 10px 24px rgba(60,40,20,.12)}
+  .win-bar{background:#e9e2d5;padding:8px 12px;display:flex;align-items:center;gap:6px;border-bottom:1px solid #dccfb8}
+  .win-bar .dot{width:11px;height:11px;border-radius:50%}
+  .win-bar .r{background:#EC6A5E}.win-bar .y{background:#F4BF4F}.win-bar .g{background:#61C554}
+  .win-bar .ttl{margin-left:8px;font-size:11px;color:#8a8170;font-weight:600}
+  .stepnum{width:44px;height:44px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;flex:0 0 auto;box-shadow:0 4px 10px rgba(217,119,87,.4)}
+  ul.clean{list-style:none;display:flex;flex-direction:column;gap:9px}
+  ul.clean li{position:relative;padding-left:24px;font-size:13.5px;color:var(--ink-soft);line-height:1.6}
+  ul.clean li::before{content:"";position:absolute;left:4px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 3px var(--orange-soft)}
+  /* 對話泡泡 */
+  .bub{border-radius:12px;padding:11px 14px;font-size:12px;line-height:1.6;max-width:88%}
+  .bub.me{background:var(--orange);color:#fff;margin-left:auto}
+  .bub.ai{background:#fff;border:1px solid var(--line);color:var(--ink-soft)}
+</style>
+
+<!-- 1 · 封面 -->
+<section class="page" style="padding:0;justify-content:flex-start">
+  <div style="height:12mm;background:var(--orange)"></div>
+  <div style="flex:1;padding:20mm 20mm 0;display:flex;flex-direction:column">
+    <div class="kicker">給想把帳號做起來、卻不知從何下手的你</div>
+    <div style="margin-top:22mm">
+      <div class="serif" style="font-size:16px;color:var(--orange-deep);letter-spacing:.04em">從零開始 · 一步一步 · 不用寫 code</div>
+      <h1 style="font-size:54px;line-height:1.1;font-weight:800;letter-spacing:-.02em;margin-top:10px;color:var(--ink)">
+        幫你的 IG，<br><span style="color:var(--orange-deep)">做一次完整健檢</span>
+      </h1>
+      <p style="font-size:18px;color:var(--ink-soft);margin-top:20px;line-height:1.7;max-width:150mm">
+        用 Claude 當「指揮官」，指揮一群 AI 幫你摸清受眾、找到定位、排好 30 天內容——你只要當那個做決定的人。
+      </p>
+    </div>
+    <div style="margin-top:auto;margin-bottom:14mm">
+      <div class="card warm" style="display:inline-flex;gap:12px;align-items:center;padding:14px 20px">
+        <span style="font-size:24px">🩺</span>
+        <span style="font-size:13.5px;color:var(--ink-soft)">開源免費 · 照著做就好 · 約 30–60 分鐘跑完一輪</span>
+      </div>
+    </div>
+  </div>
+  <div style="padding:0 20mm 14mm;display:flex;justify-content:space-between;align-items:flex-end">
+    <div style="font-size:12.5px;color:var(--muted)">social-account-audit · 帳號健檢新手手冊</div>
+    <div style="text-align:right">
+      <div style="font-size:11px;color:var(--muted);letter-spacing:.05em">製作</div>
+      <a href="https://www.instagram.com/now6pm/" class="serif" style="text-decoration:none;font-size:17px;color:var(--orange-deep);font-weight:700">Dennis · IG @now6pm</a>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · 這是什麼 / 總覽 -->
+<section class="page">
+  <div class="kicker">先搞懂 · 這到底是什麼</div>
+  <h2 class="title" style="margin-top:12px">帶你的帳號，去做一次 <span class="em">身體健檢</span></h2>
+  <p class="lead" style="margin-top:14px;max-width:165mm">你去醫院健檢，醫生會看數據、找出你哪裡卡住、開一張調理菜單。這套流程就是「帳號版的健檢」——只是醫生換成一群 AI，由你指揮。</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px">
+    <div class="card"><div class="tag">一句話比喻</div><p style="margin-top:12px;font-size:14px;color:var(--ink-soft);line-height:1.7">你當「指揮官」，Claude 幫你派一群 AI 去查資料、做分析，最後你只做決定。<br><b style="color:var(--orange-deep)">一個人，開了一間迷你 AI 公司。</b></p></div>
+    <div class="card"><div class="tag">你不需要</div><p style="margin-top:12px;font-size:14px;color:var(--ink-soft);line-height:1.8">✗ 會寫程式<br>✗ 懂數據分析<br>✗ 花錢買工具<br><span style="color:var(--green);font-weight:700">✓ 只要會複製貼上、會誠實回答問題</span></p></div>
+  </div>
+  <div class="card tint" style="margin-top:20px">
+    <div class="chip">🎯 這本手冊帶你到哪裡</div>
+    <p style="margin-top:12px;font-size:14.5px;color:var(--ink);line-height:1.75">跑完一輪，你會拿到一份自己的 <b style="color:var(--orange-deep)">定位包 + 30 天內容日曆 + 變現路線</b>，還能直接生成 30 張 IG 圖卡。整條路拆成 <b style="color:var(--orange-deep)">5 個步驟</b>，每步都有圖。</p>
+    <div style="display:flex;gap:8px;margin-top:16px;flex-wrap:nowrap;align-items:stretch">
+      <div style="flex:1;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 5px"><div class="serif" style="font-size:20px;color:var(--orange);font-weight:800">1</div><div style="font-size:11px;color:var(--ink-soft);margin-top:2px">填訪談<br>鎖目標</div></div>
+      <div style="display:flex;align-items:center;color:var(--line-strong);font-size:16px">›</div>
+      <div style="flex:1;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 5px"><div class="serif" style="font-size:20px;color:var(--orange);font-weight:800">2</div><div style="font-size:11px;color:var(--ink-soft);margin-top:2px">匯出<br>帳號數據</div></div>
+      <div style="display:flex;align-items:center;color:var(--line-strong);font-size:16px">›</div>
+      <div style="flex:1;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 5px"><div class="serif" style="font-size:20px;color:var(--orange);font-weight:800">3</div><div style="font-size:11px;color:var(--ink-soft);margin-top:2px">派 AI<br>做研究</div></div>
+      <div style="display:flex;align-items:center;color:var(--line-strong);font-size:16px">›</div>
+      <div style="flex:1;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 5px"><div class="serif" style="font-size:20px;color:var(--orange);font-weight:800">4</div><div style="font-size:11px;color:var(--ink-soft);margin-top:2px">產出<br>01–06</div></div>
+      <div style="display:flex;align-items:center;color:var(--line-strong);font-size:16px">›</div>
+      <div style="flex:1;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 5px"><div class="serif" style="font-size:20px;color:var(--orange);font-weight:800">5</div><div style="font-size:11px;color:var(--ink-soft);margin-top:2px">生 30 天<br>IG 圖卡</div></div>
+    </div>
+  </div>
+  <div class="pg-foot"><span>帳號健檢新手手冊</span><span><b>02</b> · 這是什麼</span></div>
+</section>
+
+<!-- 3 · 事前準備 -->
+<section class="page">
+  <div class="kicker">開始前 · 先備齊這些</div>
+  <h2 class="title" style="margin-top:12px">動手之前，<span class="em">先確認這 3 件事</span></h2>
+  <p class="lead" style="margin-top:12px">都很簡單，最容易被忽略的是第 3 項——請務必看完。</p>
+  <div style="display:flex;flex-direction:column;gap:14px;margin-top:20px">
+    <div class="card" style="display:flex;gap:18px;align-items:flex-start"><div style="font-size:30px">🤖</div><div><div style="font-weight:800;font-size:15px">一個 Claude 帳號</div><p style="font-size:13px;color:var(--ink-soft);margin-top:4px;line-height:1.65">到 <code class="inline">claude.ai</code> 免費註冊就能用。這就是你的「AI 指揮部」，等一下所有 Prompt 都貼到這裡跟它對話。</p></div></div>
+    <div class="card" style="display:flex;gap:18px;align-items:flex-start"><div style="font-size:30px">📂</div><div><div style="font-weight:800;font-size:15px">打開健檢流程的 GitHub 專案</div><p style="font-size:13px;color:var(--ink-soft);margin-top:4px;line-height:1.65">網址：<code class="inline">github.com/DennisWei9898/social-account-audit</code>。裡面有訪談表、可複製的 Prompt、空白模板——你會照著它一步步走。</p></div></div>
+    <div class="card tint" style="display:flex;gap:18px;align-items:flex-start;border-width:1.5px"><div style="font-size:30px">🛡️</div><div style="flex:1"><div style="font-weight:800;font-size:15px;color:var(--orange-deep)">安全鐵則：自己手動匯出數據 <span class="tag" style="background:var(--orange);margin-left:8px">最重要</span></div><p style="font-size:13px;color:var(--ink-soft);margin-top:6px;line-height:1.7"><b>絕對不要</b>叫 AI 用瀏覽器「自動登入你的 IG 幫你抓資料」。已經有人這樣做被平台判定機器人、帳號被停用。<br>正確做法：你自己打開 IG 內建的 <b>成效分析（Insights）</b>匯出，或直接<b>截圖</b>近期貼文，再貼給 Claude。</p></div></div>
+  </div>
+  <div class="pg-foot"><span>帳號健檢新手手冊</span><span><b>03</b> · 事前準備</span></div>
+</section>
+
+<!-- 4 · 步驟 1 -->
+<section class="page">
+  <div style="display:flex;align-items:center;gap:14px">
+    <div class="stepnum serif">1</div>
+    <div><div class="kicker">步驟一</div><h2 class="title" style="font-size:27px;margin-top:2px">填訪談表，先鎖定你的目標</h2></div>
+  </div>
+  <p class="lead" style="margin-top:14px">健檢的第一步不是研究，是先搞清楚「你到底想幹嘛」。目標不同（變現／漲粉／接案），結論會完全不一樣。</p>
+  <div style="display:flex;gap:20px;margin-top:18px;align-items:center">
+    <div style="flex:1">
+      <ul class="clean">
+        <li>打開專案裡的 <code class="inline">INTERVIEW.md</code> 訪談表</li>
+        <li>誠實回答 4 組問題：你的<b>目標</b>、你<b>已經有的資產</b>、你想打的<b>受眾</b>、帳號<b>現況</b></li>
+        <li>⚠️ 別謙虛也別誇大——健檢建在假資料上，後面全部要重做</li>
+        <li>把答案存起來，等下要貼給 Claude</li>
+      </ul>
+    </div>
+    <div style="width:62mm;flex:0 0 auto">
+      <div class="win">
+        <div class="win-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="ttl">INTERVIEW.md</span></div>
+        <div style="background:var(--bg);padding:14px">
+          <div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:11px;color:var(--ink-soft);line-height:1.7">
+            <b style="color:var(--orange-deep)">A. 你的目標</b><br>1. 你最終想達成什麼？<br>2. 成功長什麼樣子？<br><br>
+            <b style="color:var(--orange-deep)">B. 你是誰</b><br>5. 你的本業／身分？<br>6. 你已經有什麼別人沒有的？
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;font-size:10.5px;color:var(--muted);margin-top:6px">訪談表示意（模擬長相）</div>
+    </div>
+  </div>
+  <div class="card warm" style="margin-top:16px;font-size:12.5px;color:var(--ink-soft);line-height:1.65"><b>💡 為什麼要先訪談？</b> 因為「想開課變現」和「想接案」需要的定位、內容、平台完全不同。先鎖目標，AI 才知道往哪裡研究。</div>
+  <div class="pg-foot"><span>帳號健檢新手手冊</span><span><b>04</b> · 步驟一</span></div>
+</section>
+
+<!-- 5 · 步驟 2 -->
+<section class="page">
+  <div style="display:flex;align-items:center;gap:14px">
+    <div class="stepnum serif">2</div>
+    <div><div class="kicker">步驟二</div><h2 class="title" style="font-size:27px;margin-top:2px">手動匯出你的帳號現況</h2></div>
+  </div>
+  <p class="lead" style="margin-top:14px">讓 AI 看懂你「現在長什麼樣」——但一切自己手動來，不讓 AI 登入你的帳號。</p>
+  <div style="display:flex;gap:20px;margin-top:18px;align-items:center">
+    <div style="flex:1">
+      <ul class="clean">
+        <li>打開 IG／Threads 的<b>成效分析（Insights）</b>，或直接截圖近 12–15 則貼文</li>
+        <li>記下：你的 <b>bio</b>、粉絲數、<b>表現最好與最差</b>的貼文各 1–3 則</li>
+        <li>整理成一小段文字（貼文主題＋讚／留言數就好）</li>
+        <li>🛡️ 再說一次：<b>不要</b>叫 AI 自動登入抓，有封號風險</li>
+      </ul>
+    </div>
+    <div style="width:62mm;flex:0 0 auto">
+      <div class="win">
+        <div class="win-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="ttl">Instagram · 成效分析</span></div>
+        <div style="background:#fff;padding:14px">
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-soft);border-bottom:1px solid var(--line);padding-bottom:8px"><span>近 30 天觸及</span><b style="color:var(--orange-deep)">12,480</b></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-soft);padding:8px 0"><span>互動最高貼文</span><b>「AI 工具懶人包」</b></div>
+          <div style="background:var(--orange-soft);border-radius:8px;padding:8px;font-size:10.5px;color:var(--orange-deep);margin-top:4px;text-align:center">↓ 匯出／截圖，貼給 Claude</div>
+        </div>
+      </div>
+      <div style="text-align:center;font-size:10.5px;color:var(--muted);margin-top:6px">後台數據示意（模擬長相）</div>
+    </div>
+  </div>
+  <div class="pg-foot"><span>帳號健檢新手手冊</span><span><b>05</b> · 步驟二</span></div>
+</section>
+
+<!-- 6 · 步驟 3 -->
+<section class="page">
+  <div style="display:flex;align-items:center;gap:14px">
+    <div class="stepnum serif">3</div>
+    <div><div class="kicker">步驟三</div><h2 class="title" style="font-size:27px;margin-top:2px">讓 Claude 當指揮官，派 AI 研究</h2></div>
+  </div>
+  <p class="lead" style="margin-top:14px">這是最關鍵的一步。把訪談答案 + 帳號現況貼給 Claude，再貼專案 <code class="inline">prompts/03-research.md</code> 那段 Prompt，它就會派 AI 同時做三路研究。</p>
+  <div style="display:flex;gap:20px;margin-top:16px;align-items:flex-start">
+    <div style="flex:1">
+      <ul class="clean" style="gap:7px">
+        <li><b>受眾</b>：你想打的人在乎什麼、為什麼付錢</li>
+        <li><b>同業整體</b>：這領域整體怎麼做、什麼有效（看整片森林，不盯一個人抄）</li>
+        <li><b>平台</b>：哪個引流／變現平台適合你</li>
+        <li>👉 逼它<b>每條發現附來源</b>，查不到就說查不到，不要讓它亂編</li>
+      </ul>
+    </div>
+    <div style="width:64mm;flex:0 0 auto">
+      <div class="win">
+        <div class="win-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="ttl">Claude</span></div>
+        <div style="background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:8px">
+          <div class="bub me">你當指揮官，派三路研究：受眾／同業整體／平台。每條附來源，不要腦補。（貼上我的訪談＋現況）</div>
+          <div class="bub ai">好的，我來派 AI 同時研究這三路，回來幫你找出沒人佔的定位縫隙 🫡</div>
+        </div>
+      </div>
+      <div style="text-align:center;font-size:10.5px;color:var(--muted);margin-top:6px">對話示意（模擬長相）</div>
+    </div>
+  </div>
+  <div class="card tint" style="margin-top:14px;font-size:12.5px;color:var(--ink-soft);line-height:1.65"><b>🔑 小白也能懂的重點：</b>你不用自己會研究。你只要把 Prompt 貼進去、然後<b>逼它附上來源</b>。沒來源的「發現」，通常就是 AI 在猜。</div>
+  <div class="pg-foot"><span>帳號健檢新手手冊</span><span><b>06</b> · 步驟三</span></div>
+</section>
+
+<!-- 7 · 步驟 4 -->
+<section class="page">
+  <div style="display:flex;align-items:center;gap:14px">
+    <div class="stepnum serif">4</div>
+    <div><div class="kicker">步驟四</div><h2 class="title" style="font-size:27px;margin-top:2px">產出 01–06，再換一個 AI 驗收</h2></div>
+  </div>
+  <p class="lead" style="margin-top:14px">研究出來後，用 <code class="inline">prompts/05-produce.md</code> 一份一份產出，填進空白模板 <code class="inline">templates/</code>。</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px">
+    <div class="card" style="padding:12px 15px;font-size:12.5px"><b style="color:var(--orange-deep)">01</b> 定位包（一句話定位＋bio）</div>
+    <div class="card" style="padding:12px 15px;font-size:12.5px"><b style="color:var(--orange-deep)">02</b> Personas（誰願意付費）</div>
+    <div class="card" style="padding:12px 15px;font-size:12.5px"><b style="color:var(--orange-deep)">03</b> 平台決策</div>
+    <div class="card" style="padding:12px 15px;font-size:12.5px"><b style="color:var(--orange-deep)">04</b> 30 天內容日曆</div>
+    <div class="card" style="padding:12px 15px;font-size:12.5px"><b style="color:var(--orange-deep)">05</b> 變現時間表</div>
+    <div class="card" style="padding:12px 15px;font-size:12.5px"><b style="color:var(--orange-deep)">06</b> 可重跑流程</div>
+  </div>
+  <div class="card tint" style="margin-top:16px;display:flex;gap:14px;align-items:center"><div style="font-size:26px">🧐</div><div><div style="font-weight:800;font-size:14px;color:var(--orange-deep)">關鍵：換一個「乾淨的」AI 驗收</div><p style="font-size:12.5px;color:var(--ink-soft);margin-top:3px;line-height:1.6">開一個<b>新對話</b>，貼「驗收 Prompt」，叫它逐條檢查（bio 字數、日曆欄位、有沒有亂編數字、有沒有 AI 八股腔）。因為 <b>AI 驗自己的作業一定放水</b>，換一個來抓才準。</p></div></div>
+  <div class="pg-foot"><span>帳號健檢新手手冊</span><span><b>07</b> · 步驟四</span></div>
+</section>
+
+<!-- 8 · 步驟 5 -->
+<section class="page">
+  <div style="display:flex;align-items:center;gap:14px">
+    <div class="stepnum serif">5</div>
+    <div><div class="kicker">步驟五</div><h2 class="title" style="font-size:27px;margin-top:2px">接圖卡引擎，生 30 天 IG 圖卡</h2></div>
+  </div>
+  <p class="lead" style="margin-top:14px">有了定位（01）和 30 天日曆（04），接上姊妹專案，把主題變成一張張 IG 圖卡＋文案。</p>
+  <div style="display:flex;gap:20px;margin-top:18px;align-items:center">
+    <div style="flex:1">
+      <ul class="clean">
+        <li>打開 <code class="inline">github.com/DennisWei9898/social-cards-engine</code></li>
+        <li>選一種風格（Navy 海報／白底迷因／暖色／ELI5），找出你的品牌調性</li>
+        <li>把 30 天日曆的主題丟進去，一張張生成圖卡＋文案</li>
+        <li>教學型圖卡最後一頁燒「<b>留言關鍵字</b>」→ 私訊導你的社群，把互動變名單</li>
+      </ul>
+    </div>
+    <div style="width:52mm;flex:0 0 auto">
+      <div class="win">
+        <div class="win-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="ttl">你的 IG 圖卡</span></div>
+        <div style="background:#14233B;padding:18px 14px;color:#F2EDE0">
+          <div style="font-size:9px;color:#D9A86C;letter-spacing:.2em">— 你的定位</div>
+          <div style="font-size:19px;font-weight:800;line-height:1.25;margin-top:6px">一句話，<br>換一個<span style="color:#4A8FE7">能動的成果</span></div>
+          <div style="background:#1F3252;border-radius:8px;padding:7px 9px;font-size:9.5px;margin-top:12px;color:#8FA3C2">📌 留言「關鍵字」領完整資源</div>
+        </div>
+      </div>
+      <div style="text-align:center;font-size:10.5px;color:var(--muted);margin-top:6px">圖卡示意（模擬長相）</div>
+    </div>
+  </div>
+  <div class="card warm" style="margin-top:14px;font-size:12.5px;color:var(--ink-soft);line-height:1.65"><b>🎉 到這裡，一整輪就跑完了。</b>你從「不知道哪裡卡」，變成手上有定位、有 30 天內容、有圖卡——而且整套流程你自己能重跑。</div>
+  <div class="pg-foot"><span>帳號健檢新手手冊</span><span><b>08</b> · 步驟五</span></div>
+</section>
+
+<!-- 9 · 疑難排解 -->
+<section class="page">
+  <div class="kicker">用得更順 · 卡住怎麼辦</div>
+  <h2 class="title" style="margin-top:12px">最常見的 <span class="em">幾個卡關</span></h2>
+  <p class="lead" style="margin-top:12px">遇到就對照這頁，多半 2 分鐘內解決。</p>
+  <div style="display:flex;flex-direction:column;gap:11px;margin-top:18px">
+    <div class="card" style="padding:14px 18px"><div style="font-weight:800;font-size:14px;color:var(--ink)">❓ AI 給的研究「感覺是它自己編的」？</div><p style="font-size:12.5px;color:var(--ink-soft);margin-top:5px;line-height:1.6">回它一句「每一條都附上來源網址，查不到的就標『查不到』，不要用推測當事實」。沒來源的發現一律當它在猜。</p></div>
+    <div class="card" style="padding:14px 18px"><div style="font-weight:800;font-size:14px;color:var(--ink)">❓ 它把我寫得太誇大 / 不像我？</div><p style="font-size:12.5px;color:var(--ink-soft);margin-top:5px;line-height:1.6">貼回你訪談表的「真實資產」，說「只能用這些真的東西，不要編造成就」。定位要建在你真的有的東西上。</p></div>
+    <div class="card" style="padding:14px 18px"><div style="font-weight:800;font-size:14px;color:var(--ink)">❓ 一次要它做太多，品質變差？</div><p style="font-size:12.5px;color:var(--ink-soft);margin-top:5px;line-height:1.6">一次只領一份（先 01，再 02…）。研究、產出、驗收分開跑，別擠在一則訊息。</p></div>
+  </div>
+  <div class="card tint" style="margin-top:16px;display:flex;gap:14px;align-items:center"><div style="font-size:26px">🆘</div><div><div style="font-weight:800;font-size:14px;color:var(--orange-deep)">黃金求助法則</div><p style="font-size:13px;color:var(--ink-soft);margin-top:3px;line-height:1.6">卡住就<b>截圖</b> + 一句「我卡在第 X 步」，貼到 1,800 人 Claude Code 讀書會問——比自己乾瞪眼快 10 倍。</p></div></div>
+  <div class="pg-foot"><span>帳號健檢新手手冊</span><span><b>09</b> · 疑難排解</span></div>
+</section>
+
+<!-- 10 · 結尾 CTA（@now6pm 鐵律） -->
+<section class="page" style="justify-content:center;text-align:center;align-items:center">
+  <div style="max-width:150mm">
+    <div class="chip" style="margin:0 auto">🎊 你辦到了</div>
+    <h2 style="font-size:36px;font-weight:800;line-height:1.2;margin-top:20px;color:var(--ink)">健檢完的下一步，<br><span style="color:var(--orange-deep)">是動手發第一篇</span></h2>
+    <p style="font-size:15px;color:var(--ink-soft);margin-top:18px;line-height:1.8">你已經有定位、有 30 天內容、有圖卡了。別想著要完美——照日曆發出第一篇，讓數據回來告訴你下一步。<br>一個人，也能做出一支團隊的產出。</p>
+    <div class="card warm" style="margin-top:22px;font-size:13px;color:var(--ink-soft);line-height:1.7;text-align:left;display:inline-block">
+      🔗 <b>健檢流程</b>：github.com/DennisWei9898/social-account-audit<br>
+      🎨 <b>圖卡引擎</b>：github.com/DennisWei9898/social-cards-engine
+    </div>
+    <div style="margin-top:34px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:6px">
+      <div style="font-size:12px;color:var(--muted);letter-spacing:.1em">想一起玩 · 有問題想問 · 追蹤我</div>
+      <div class="serif" style="font-size:26px;color:var(--ink);font-weight:700">Dennis</div>
+      <a href="https://www.instagram.com/now6pm/" style="text-decoration:none;display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#F6EFE1;padding:8px 18px;border-radius:999px;margin-top:4px">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F6EFE1" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="6"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="#F6EFE1" stroke="none"/></svg>
+        <span style="font-size:14px;font-weight:700;letter-spacing:.03em">@now6pm</span>
+      </a>
+      <a href="https://www.instagram.com/now6pm/" style="text-decoration:none;font-size:11.5px;color:var(--muted);margin-top:8px;letter-spacing:.02em">instagram.com/now6pm · 1,800 人 Claude Code 讀書會</a>
+    </div>
+  </div>
+  <div style="position:absolute;bottom:9mm;left:0;right:0;text-align:center;font-size:10.5px;color:var(--muted)">帳號健檢新手手冊 · social-account-audit</div>
+</section>
