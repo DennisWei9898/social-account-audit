@@ -47,7 +47,7 @@ MIT License · by [@now6pm](https://www.instagram.com/now6pm/)
 ---
 
 ## 📖 完全新手看這份：圖文手冊
-不知道怎麼開始？先看 **[`handbook/帳號健檢新手手冊.pdf`](./handbook/)**——10 頁 A4 圖文，一步一步帶你從零跑到生出 30 天圖卡，完全不用寫 code。
+不知道怎麼開始？先看 **[`handbook/IG＆Threads 完整健檢手冊.pdf`](./handbook/)**——10 頁 A4 圖文，一步一步帶你把 IG 和 Threads 一次健檢完、生出 30 天圖卡，完全不用寫 code。
 
 ## 兩種用法（挑一種）
 
