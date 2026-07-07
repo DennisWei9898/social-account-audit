@@ -64,7 +64,7 @@ curl -s -G \
 - **原始貼文永久連結（permalink）→ 無法取得**。實測回傳中 `/posts/` 連結、`story_fbid` 皆 0 筆，無穩定 permalink 可回抓。
 - **連結預覽（外部連結卡）→ 本測未取得**。此篇為影片貼文，無 `l.facebook.com` link-shim；連結型貼文是否回預覽，**未在本測驗證**。
 - **精確互動數 → 無法取得**。reactions 為四捨五入顯示（`3.2 萬`）。
-- **帳號層（C 級）→ 撞登入牆，退回手動**。帳號頁粉絲數、追蹤數、貼文清單無法免登入取得。**具體退回手動做法**：請帳號主自己登入 FB／Meta Business Suite，把粉絲數、專頁洞察報告（Insights）**匯出或截圖**再貼進來——絕不代替登入本人帳號自動抓（見「風險」）。
+- **帳號層（C 級）→ 撞登入牆，退回手動**。帳號頁粉絲數、追蹤數、貼文清單無法免登入取得。**具體退回手動做法**：請帳號主自己登入 FB／Meta Business Suite，把粉絲數、專頁洞察報告（Insights）**匯出或截圖**再貼進來——絕不代替登入本人帳號自動抓（見「風險」）。想半自動化查這些數字可走進階 opt-in 路徑 [`chrome-assisted.md`](./chrome-assisted.md)（Claude-in-Chrome 唯讀查你**自己已登入**的後台，含硬護欄與殘留風險）。
 - **oEmbed（`graph.facebook.com/.../oembed_post`）→ 無數據價值**。2026-06 起雖免 token，但只回**嵌入殼 HTML**（iframe / script），**不含**讚／留言／分享數。
 - **m.facebook.com / mbasic.facebook.com / RSS → 全死**。實測 mbasic 已導向現代 FB 殼並撞登入牆（見反例②）。
 - **需要「單篇貼文 URL」**：貼帳號頁無效（見反例①）。

@@ -59,7 +59,7 @@ curl -s "https://r.jina.ai/https://www.instagram.com/p/<shortcode>/"
 
 ## 缺口與限制
 
-- **帳號層粉絲數拿不到（重點）**：直接開帳號頁（如 `instagram.com/now6pm/`）會撞**登入牆**，免登入抓不到粉絲數。第三方鏡像站全部不可靠——實測 **picuki / pixwox / piokok / picnob 全被 Cloudflare 403**、**dumpor 無資料**、**imginn 已知不穩**。→ **粉絲數請使用者手動提供 / 截圖**。
+- **帳號層粉絲數拿不到（重點）**：直接開帳號頁（如 `instagram.com/now6pm/`）會撞**登入牆**，免登入抓不到粉絲數。第三方鏡像站全部不可靠——實測 **picuki / pixwox / piokok / picnob 全被 Cloudflare 403**、**dumpor 無資料**、**imginn 已知不穩**。→ **粉絲數請使用者手動提供 / 截圖**；或走進階 opt-in 路徑 [`chrome-assisted.md`](./chrome-assisted.md)（Claude-in-Chrome 唯讀查你**自己已登入**的後台——**不是自動登入**，含硬護欄與殘留風險說明）。
 - **embed 內出現的「followers」不是可靠的帳號層數字**：方法①的 embed 會顯示「該貼文作者」的粉絲數（實測見到 `456 followers`），但它 (1) 只是那一篇貼文作者當下的數字、(2) 合拍貼文顯示的是個人帳號而非品牌帳號、(3) 需先有一篇該作者的貼文連結才拿得到。**不是**「給一個帳號 handle 就能查粉絲數」的穩定管道，不可拿來當帳號層數據，仍**退回手動**。
 - **舊 API 已死，勿嘗試**：`?__a=1`、`?__a=1&__d=dis` 與舊版 GraphQL endpoint 皆已失效，不要浪費請求。
 - **留言可能不完整**：全文頁只回傳**部分留言**（實測回到 8 則可見留言 + 彙總留言數 16），巢狀回覆 / 完整名單需登入才看得全 → 需要完整留言名單時退回手動。
