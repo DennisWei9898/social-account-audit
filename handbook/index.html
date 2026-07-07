@@ -84,7 +84,7 @@
     <div class="chip">🎯 這本手冊帶你到哪裡</div>
     <p style="margin-top:12px;font-size:14.5px;color:var(--ink);line-height:1.75">跑完一輪，你會拿到一份自己的 <b style="color:var(--orange-deep)">定位包 + 30 天內容日曆 + 變現路線</b>，還能直接生成 30 張 IG 圖卡。整條路拆成 <b style="color:var(--orange-deep)">5 個步驟</b>，每步都有圖。</p>
     <div style="display:flex;gap:8px;margin-top:16px;flex-wrap:nowrap;align-items:stretch">
-      <div style="flex:1;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 5px"><div class="serif" style="font-size:20px;color:var(--orange);font-weight:800">1</div><div style="font-size:11px;color:var(--ink-soft);margin-top:2px">填訪談<br>鎖目標</div></div>
+      <div style="flex:1;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 5px"><div class="serif" style="font-size:20px;color:var(--orange);font-weight:800">1</div><div style="font-size:11px;color:var(--ink-soft);margin-top:2px">回答它<br>問你的</div></div>
       <div style="display:flex;align-items:center;color:var(--line-strong);font-size:16px">›</div>
       <div style="flex:1;text-align:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 5px"><div class="serif" style="font-size:20px;color:var(--orange);font-weight:800">2</div><div style="font-size:11px;color:var(--ink-soft);margin-top:2px">匯出<br>帳號數據</div></div>
       <div style="display:flex;align-items:center;color:var(--line-strong);font-size:16px">›</div>
@@ -115,32 +115,31 @@
 <section class="page">
   <div style="display:flex;align-items:center;gap:14px">
     <div class="stepnum serif">1</div>
-    <div><div class="kicker">步驟一</div><h2 class="title" style="font-size:27px;margin-top:2px">填訪談表，先鎖定你的目標</h2></div>
+    <div><div class="kicker">步驟一</div><h2 class="title" style="font-size:27px;margin-top:2px">回答它問你的，先鎖定目標</h2></div>
   </div>
-  <p class="lead" style="margin-top:14px">健檢的第一步不是研究，是先搞清楚「你到底想幹嘛」。目標不同（變現／漲粉／接案），結論會完全不一樣。</p>
+  <p class="lead" style="margin-top:14px">你只要說一句「<b>健檢我的帳號</b>」，skill 就會<b>主動一題一題問你</b>——你回答就好，不用自己填表。</p>
   <div style="display:flex;gap:20px;margin-top:18px;align-items:center">
     <div style="flex:1">
       <ul class="clean">
-        <li>打開專案裡的 <code class="inline">INTERVIEW.md</code> 訪談表</li>
-        <li>誠實回答 4 組問題：你的<b>目標</b>、你<b>已經有的資產</b>、你想打的<b>受眾</b>、帳號<b>現況</b></li>
-        <li>⚠️ 別謙虛也別誇大——健檢建在假資料上，後面全部要重做</li>
-        <li>把答案存起來，等下要貼給 Claude</li>
+        <li>它會問你 4 件事：<b>目標</b>、你<b>已經有的資產</b>、想打的<b>受眾</b>、帳號<b>現況</b></li>
+        <li>誠實回答就好（⚠️ 別誇大——它會<b>照你說的</b>建定位，唬它等於唬自己）</li>
+        <li>問完它會<b>複述一次</b>跟你確認方向，對了才往下</li>
+        <li>手動跑（claude.ai）：自己填 <code class="inline">INTERVIEW.md</code> 再貼給它</li>
       </ul>
     </div>
     <div style="width:62mm;flex:0 0 auto">
       <div class="win">
-        <div class="win-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="ttl">INTERVIEW.md</span></div>
-        <div style="background:var(--bg);padding:14px">
-          <div style="background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:11px;color:var(--ink-soft);line-height:1.7">
-            <b style="color:var(--orange-deep)">A. 你的目標</b><br>1. 你最終想達成什麼？<br>2. 成功長什麼樣子？<br><br>
-            <b style="color:var(--orange-deep)">B. 你是誰</b><br>5. 你的本業／身分？<br>6. 你已經有什麼別人沒有的？
-          </div>
+        <div class="win-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="ttl">Claude</span></div>
+        <div style="background:var(--bg);padding:12px;display:flex;flex-direction:column;gap:8px">
+          <div class="bub ai">先問你一題：你經營這個帳號，<b>最終想達成什麼</b>？（開課／接案／漲粉／導流本業）</div>
+          <div class="bub me">想開線上課</div>
+          <div class="bub ai">了解 👍 那你<b>已經有什麼別人沒有的</b>？（技能／作品／社群…）</div>
         </div>
       </div>
-      <div style="text-align:center;font-size:10.5px;color:var(--muted);margin-top:6px">訪談表示意（模擬長相）</div>
+      <div style="text-align:center;font-size:10.5px;color:var(--muted);margin-top:6px">skill 主動提問示意（模擬長相）</div>
     </div>
   </div>
-  <div class="card warm" style="margin-top:16px;font-size:12.5px;color:var(--ink-soft);line-height:1.65"><b>💡 為什麼要先訪談？</b> 因為「想開課變現」和「想接案」需要的定位、內容、平台完全不同。先鎖目標，AI 才知道往哪裡研究。</div>
+  <div class="card warm" style="margin-top:16px;font-size:12.5px;color:var(--ink-soft);line-height:1.65"><b>💡 為什麼先問清楚？</b> 因為「想開課」和「想接案」需要的定位、內容、平台完全不同。先鎖目標，AI 才知道往哪裡研究。</div>
   <div class="pg-foot"><span>帳號健檢新手手冊</span><span><b>04</b> · 步驟一</span></div>
 </section>
 
@@ -181,7 +180,7 @@
     <div class="stepnum serif">3</div>
     <div><div class="kicker">步驟三</div><h2 class="title" style="font-size:27px;margin-top:2px">讓 Claude 當指揮官，派 AI 研究</h2></div>
   </div>
-  <p class="lead" style="margin-top:14px">這是最關鍵的一步。把訪談答案 + 帳號現況貼給 Claude，再貼專案 <code class="inline">prompts/03-research.md</code> 那段 Prompt，它就會派 AI 同時做三路研究。<b>（裝了 skill 的人更簡單：直接說「健檢我的帳號」，它自己會派。）</b></p>
+  <p class="lead" style="margin-top:14px">確認目標後，skill 會先<b>擬一份 plan</b>（要研究什麼、要產出什麼），再當指揮官<b>派「不同的 AI」去跑</b>——便宜快的模型跑研究、強模型做產出、另一個 AI 驗收。研究一次三路並行：<b>（手動跑就貼 <code class="inline">prompts/03-research.md</code> 那段。）</b></p>
   <div style="display:flex;gap:20px;margin-top:16px;align-items:flex-start">
     <div style="flex:1">
       <ul class="clean" style="gap:7px">
