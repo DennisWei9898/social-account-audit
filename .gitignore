@@ -2,3 +2,5 @@
 node_modules/
 *.log
 .env
+PLAN-v2.md
+RESEARCH-v2.md
